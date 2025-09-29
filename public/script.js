@@ -201,7 +201,7 @@ function handleLogin(event) {
             localStorage.setItem('user', JSON.stringify(data.user));
             // Redirigir después de un breve delay
             setTimeout(() => {
-                window.location.href = '/pages/home.html';
+                window.location.href = '/public/pages/home.html';
             }, 1000);
         } else {
             message.style.color = 'red';

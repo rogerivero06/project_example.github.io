@@ -1,0 +1,423 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+/* Color Variables */
+:root {
+    --color-bg: #EBECF2;
+    --color-surface: #FFFFFF;
+    --color-border: #9A9EB2;
+    --color-text-primary: #000;
+    --color-text-primary-button: #FFFFFF;
+    --color-text-secondary: #3F435D;
+    --color-tooltip-bg: #2A2E33;
+    --color-tooltip-text: #fff;
+    --shadow-border: rgba(0, 0, 0, 0.1);
+    --color-label: rgba(0, 0, 0, 0.5);
+    --user-bg-color: #FAFAFC;
+    --color-hover-options : #F7F7F7
+}
+
+body.dark-mode {
+    --color-bg: #3A3D4D;
+    --color-surface: #12141A;
+    --color-border: #282D3B;
+    --color-text-primary: #FFFFFF;
+    --color-text-primary-button: #000;
+    --color-text-secondary: #9CA288;
+    --color-tooltip-bg: #fff;
+    --color-tooltip-text: #000;
+    --shadow-border: rgba(255, 255, 255, 0.1);
+    --color-label: rgba(255, 255, 255, 0.5);
+    --user-bg-color: #FAFAFC;
+    --color-hover-options : #000
+}
+
+/* Global Styles */
+* {
+    box-sizing: border-box;
+    font-family: "Poppins", serif;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  border-color: var(--color-surface);
+  background-color: var(--color-bg);
+  transition: color 0.5s ease, background-color 0.3s ease, left 0.5s ease;
+}
+
+/* Left section */
+.left {
+  width: 40%;
+  height: 100%;
+}
+
+.left img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Right section */ 
+.right {
+  width: 60%;
+  height: 100%;
+}
+
+.right .top {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem 2rem 0 1.8rem;
+}
+
+.right .brand {
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 600;
+  gap: 0.1rem;
+  color: var(--color-text-primary);
+}
+
+.right .top img {
+  width: 1.5rem;
+}
+
+.right .top a {
+  color: var(--color-text-primary);
+  font-size: 0.7rem;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+/* Forms */ 
+.forms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 90%;
+  width: 100%;
+}
+
+.forms .welcome-message {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  width: 100%;
+  color: var(--color-text-primary);
+}
+
+.register .welcome-message-register {
+  font-size: 1.4rem;
+  font-weight: 500;
+  margin-top: 0;
+  padding-top: 0;
+  margin-bottom: 0.2rem;
+  text-align: center;
+  width: 100%;
+  color: var(--color-text-primary);
+}
+
+.forms .login-description {
+  font-size: 0.7rem;
+  margin-bottom: 1.6rem;
+  text-align: center;
+  color: var(--color-text-primary);
+}
+
+.forms .login-option {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--color-text-primary);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  gap: 0.5rem;
+  height: 2.5rem;
+  width: 18rem;
+  justify-content: center;
+  margin-bottom: 0.6rem;
+}
+
+forms .login-option:hover {
+  background-color: var(--color-hover-options);
+}
+
+.forms .login-option img {
+  width: 1.2rem;
+}
+
+.forms .login-option span {
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--color-text-primary);
+}
+
+/* Line with text */
+.forms .line-with-text {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  font-size: 0.8rem;
+  margin: 1.5rem 0;
+}
+
+.register .line-with-text-register {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-text-primary);
+  font-size: 0.8rem;
+  margin: 0.3rem 0;
+}
+
+.forms .line-with-text::before,
+.forms .line-with-text::after {
+  content: '';
+  border-bottom: 2px solid var(--color-text-primary);
+  flex: 1;
+  margin: 0 0.6rem;
+}
+
+.register .line-with-text-register::before,
+.register .line-with-text-register::after {
+  content: '';
+  border-bottom: 2px solid var(--color-text-primary);
+  flex: 1;
+  margin: 0 0.6rem;
+}
+
+/* Form */ 
+form, form .input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+form .input-container .group {
+  position: relative;
+}
+
+form .input-container .group input {
+  border: 2px solid var(--shadow-border);
+  border-radius: 0.3rem;
+  font-size: 0.7rem;
+  font-weight: 500;
+  height: 2.4rem;
+  outline: none;
+  padding: 0.2rem 0.5rem;
+  background-color: transparent;
+  color: var(--color-text-primary);
+  display: block;
+  width: 100%;
+}
+
+form .input-container .group label {
+  position: absolute;
+  font-size: 0.7rem;
+  font-weight: 500;
+  color: var(--color-label);
+  margin-left: 0.7rem;
+  top: 0.7rem;
+  padding: 0 0.3rem;
+  transition: all 0.5s ease;
+}
+
+form .input-container input:focus,
+form .input-container input:hover,
+form .input-container input:valid {
+  border: 2px solid var(--color-text-primary);
+}
+
+form .input-container input:focus~label,
+form .input-container input:hover~label,
+form .input-container input:valid~label {
+  top: -0.4rem;
+  color: var(--color-text-primary);
+  background-color: var(--color-bg);
+  font-size: 0.6rem;
+}
+
+/* Estilos para contenedor de requisitos de contraseña (oculto inicialmente) */
+#password-requirements {
+  font-size: 0.5rem;
+  display: none; /* Oculto hasta que se empiece a escribir */
+}
+
+/* Mensaje de repetir contraseña (oculto inicialmente) */
+#repeat-password-message {
+  display: none; /* Oculto hasta que se empiece a escribir */
+}
+
+#register-message, #login-message {
+  font-size: 0.5rem;
+  margin-top: 0.7rem;
+  display: flex;
+  justify-content: center;
+}
+
+form .options-container {
+  display: flex;
+  align-items: center;
+  font-size: 0.7rem;
+  justify-content: space-between;
+  margin: 0.3rem 0.2rem;
+}
+
+form .options-container .checkbox {
+  display: flex;
+  align-items: center;
+  gap: 0.2rem;
+  accent-color: var(--color-text-primary);
+  cursor: pointer;
+}
+
+form .options-container input {
+  cursor: pointer;
+}
+
+form .options-container #checkbox:checked {
+  content: "✓"; 
+  color: var(--color-surface);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: var(--color-text-primary);
+}
+
+form .options-container label,
+form .options-container a {
+  color: var(--color-text-primary);
+  font-weight: 600;
+}
+
+form button {
+  background-color: var(--color-text-primary);
+  color: var(--color-text-primary-button);
+  border-radius: 0.3rem;
+  cursor: pointer;
+  font-size: 0.7rem;
+  font-weight: 500;
+  height: 2.5rem;
+}
+
+/* Estilo para botón deshabilitado */
+form button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.5;
+}
+
+/* Register */
+.register {
+  display: none;
+  margin: 0;
+  padding: 0;
+  margin-top: -2rem;
+}
+
+.register .footer-note {
+  color: var(--color-text-primary);
+  font-size: 0.6rem;
+  width: 18rem;
+  text-align: center;
+}
+
+.register .footer-note a {
+  color: var(--color-text-primary);
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.right.active .login {
+  display: none;
+}
+
+.right.active .register {
+  display: block;
+}
+
+/* Mensajes de validación */
+.message-valid {
+    color: green !important;
+    font-size: 0.5rem;
+    margin: 0.125rem 0;
+}
+
+.message-error {
+    color: red !important;
+    font-size: 0.5rem;
+    margin: 0.125rem 0;
+}
+
+/* Dark mode */
+.brand-dark, .right .github-dark {
+  display: none;
+}
+
+body.dark-mode .brand-dark, 
+body.dark-mode .right .github-dark {
+  display: block;
+}
+
+body.dark-mode .brand-light, 
+body.dark-mode .right .github-light {
+  display: none;
+}
+
+.right .dark-mode-btn {
+  position: absolute;
+  width: 2.4rem;
+  height: 2.4rem;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-bg);
+  border-radius: 50%;
+  box-shadow: 0 0 10px var(--color-border);
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 200;
+}
+
+.right .dark-mode-btn i {
+  font-size: 1.5rem;
+  position: absolute;
+  color: var(--color-text-secondary);
+  transition: transform 0.3s ease-in;
+}
+
+.right .dark-mode-btn i:last-child {
+  transform: translateY(150%) rotateY(180deg);
+}
+
+.right .dark-mode-btn i:first-child {
+transform: rotateY(180deg);
+}
+
+body.dark-mode .right .dark-mode-btn i:last-child {
+  transform: translateY(0);
+}
+
+body.dark-mode .right .dark-mode-btn i:first-child {
+  transform: translateY(-150%);
+}
+
+/* Responsive */
+@media (max-width:800px) {
+  .left {
+    display: none;
+  }
+  
+  .right {
+    width: 100%;
+  }
+}

@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Example</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <div class="left">
+      <img src="/img/Banner.jpg" alt="banner" />
+    </div>
+    
+    <div class="right" id="right">
+      
+      <div class="dark-mode-btn" id="dark-mode-btn">
+        <i class='bx bx-moon'></i>
+        <i class='bx bx-sun'></i>
+      </div>
+      
+      <div class="top">
+        <div class="brand">
+          <img class="brand-light" src="/img/icons/brand-light.svg" alt="logo" />
+          <img class="brand-dark" src="/img/icons/brand-dark.svg" alt="logo" />
+          <span>Rogelio Nexos</span>
+        </div>
+        <a id="register-btn" href="#">Create account</a>
+      </div>
+      <div class="forms">
+        <div class="login">
+          <h1 class="welcome-message">Welcome back</h1>
+          <p class="login-description">Enter your account details.</p>
+          <div class="login-option">
+            <img src="/img/icons/google.svg" alt="google-icon" />
+            <span>Log in with Google</span>
+          </div>
+          <div class="login-option">
+            <img class="github-light" src="/img/icons/github-light.svg" alt="github-icon" />
+            <img class="github-dark" src="/img/icons/github-dark.svg" alt="github-icon" />
+            <span>Log in with Github</span>
+          </div>
+          <div class="line-with-text">
+            <span>or login with</span>
+          </div>
+          <form action="" onsubmit="handleLogin(event)">
+            <div class="input-container">
+              <div class="group">
+                <input id="email-username" type="text" required oninput="validateLoginFields()"/>
+                <label for="email-username">Email or Username</label>
+                <!-- Mensaje removido: No se muestran validaciones en tiempo real en login -->
+              </div>
+              <div class="group">
+                <input id="password-login" type="password" required oninput="validateLoginFields()"/>
+                <label for="password-login">Password</label>
+                <!-- Mensaje removido: No se muestran validaciones en tiempo real en login -->
+              </div>
+            </div>
+            <div class="options-container">
+              <div class="checkbox">
+                <input id="checkbox" type="checkbox" />
+                <label for="checkbox" >Keep me signed in</label>
+              </div>
+              <a href="/pages/forgotpass.html">Forgot password</a>
+            </div>
+            <button type="submit" id="signin-btn">Sign in</button>
+          </form>
+          <p id="login-message"></p>
+        </div>
+        
+        <div class="register">
+          <h1 class="welcome-message-register">Welcome</h1>
+          <p class="login-description">Enter your account details.</p>
+          <form action="" onsubmit="handleRegister(event)">
+            <div class="input-container">
+              <div class="group">
+                <input id="username" type="text" required oninput="validateUsername()"/>
+                <label for="username">Username</label>
+                <p id="username-message" class="message-error"></p>
+              </div>
+              <div class="group">
+                <input id="email" type="email" required oninput="validateEmail()"/>
+                <label for="email">Email</label>
+                <p id="email-message" class="message-error"></p>
+              </div>
+              <div class="group">
+                <input id="password-register" type="password" required oninput="validatePasswordRealTime()"/>
+                <label for="password-register">Password</label>
+                <div id="password-requirements" style="font-size: 12px; margin-top: 5px;">
+                  <p id="length-error" class="message-error">Mínimo 8 caracteres</p>
+                  <p id="uppercase-error" class="message-error">Mínimo 2 letras mayúsculas</p>
+                  <p id="lowercase-error" class="message-error">Mínimo 2 letras minúsculas</p>
+                  <p id="number-error" class="message-error">Mínimo 2 números</p>
+                  <p id="special-error" class="message-error">Mínimo 1 carácter especial (!@#$%^&*)</p>
+                </div>
+              </div>
+              <div class="group">
+                <input id="repeat-password" type="password" required oninput="validatePasswordMatch()"/>
+                <label for="repeat-password">Repeat password</label>
+                <p id="repeat-password-message" class="message-error"></p>
+              </div>
+            </div>
+          <div class="line-with-text-register">
+            <span>or signup with</span>
+          </div>
+          <div class="login-option">
+            <img src="/img/icons/google.svg" alt="google-icon" />
+            <span>Sign up with Google</span>
+          </div>
+          <div class="login-option">
+            <img class="github-light" src="/img/icons/github-light.svg" alt="github-icon" />
+            <img class="github-dark" src="/img/icons/github-dark.svg" alt="github-icon" />
+            <span>Sign up with Github</span>
+          </div>
+          <p class="footer-note">By creating an account you agree with our <a href="#">Terms of Services</a>, <a href="#">Privacy Policy</a> and our default <a href="#">Notification Settings.</a></p>
+            <button id="signup-btn" type="submit">Sign up</button>
+          </form>
+          <p id="register-message"></p>
+        </div>
+      </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

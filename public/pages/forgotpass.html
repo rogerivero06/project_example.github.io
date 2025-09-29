@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Example</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="forgotpass.css" />
+</head>
+<body>
+    
+    <div class="left">
+      <img src="/../img/Banner.jpg" alt="banner" />
+    </div>
+    
+    <div class="right" id="right">
+      
+      <div class="dark-mode-btn" id="dark-mode-btn">
+        <i class='bx bx-moon'></i>
+        <i class='bx bx-sun'></i>
+      </div>
+      
+      <div class="top">
+        <div class="brand">
+          <img class="brand-light" src="/../img/icons/brand-light.svg" alt="logo" />
+          <img class="brand-dark" src="/../img/icons/brand-dark.svg" alt="logo" />
+          <span>Rogelio Nexos</span>
+        </div>
+      </div>
+      <div class="forms">
+        <div class="login">
+          <h1 class="welcome-message">Password recovery</h1>
+          <p class="login-description">Enter your account details.</p>
+          <p class="login-description-1">We will send a code to your email, <br />to help you to reset your password</p>
+          <form action="">
+            <div class="input-container">
+              <div class="group">
+                <input id="email" type="email" required/>
+                <label for="email">Email</label>
+              </div>
+          <form action="">
+            <button id="send-code-btn">Send code</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    
+    <script src="forgotpass.js"></script>
+</body>
+</html>
